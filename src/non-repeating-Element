@@ -1,0 +1,12 @@
+ public int firstNonRepeating(int[] arr) {
+        LinkedHashMap<Integer, Integer> map=new LinkedHashMap<>();
+        for(int num:arr){
+            map.put(num, map.getOrDefault(num,0)+1);
+        }
+        for(int i: map.keySet()){
+            if(map.get(i)==1){
+                return i;
+            }
+        }
+        return 0;
+    }
