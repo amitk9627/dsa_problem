@@ -1,0 +1,18 @@
+static int majorityElement(int arr[]) {
+        if(arr.length==1){return arr[0];}
+        int max=0;
+        for(int nums:arr) {
+            max=Math.max(max, nums);
+        }
+        int freq[]=new int[max+1];
+        for(int i=0;i<arr.length;i++){
+           freq[arr[i]]++;
+        }
+        int size= arr.length/2;
+        for(int i=0;i<freq.length;i++){
+            if(size<freq[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
